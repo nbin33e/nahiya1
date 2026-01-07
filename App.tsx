@@ -86,7 +86,6 @@ const App: React.FC = () => {
 
   return (
     <div className="h-screen w-screen bg-sky-100 flex items-center justify-center p-0 md:p-4 overflow-hidden">
-      {/* Container with responsive height and improved visual padding */}
       <div className="w-full h-full md:max-w-7xl md:max-h-[900px] bg-white md:rounded-[50px] shadow-2xl overflow-hidden border-0 md:border-[12px] border-white ring-[10px] ring-blue-400/10 flex flex-col relative z-20">
         {renderView()}
       </div>
