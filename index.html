@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>أبطال السلامة</title>
+    
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Apple PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="أبطال السلامة">
+    
+    <link rel="apple-touch-icon" href="https://api.dicebear.com/7.x/adventurer/svg?seed=Felix&backgroundColor=b6e3f4">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Changa:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary: #4ade80;
+        --secondary: #60a5fa;
+        --accent: #facc15;
+      }
+      body {
+        font-family: 'Changa', 'Cairo', sans-serif;
+        background-color: #f0f9ff;
+        background-image: radial-gradient(#bae6fd 1.5px, transparent 1.5px);
+        background-size: 30px 30px;
+        overflow: hidden;
+        user-select: none;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .cartoon-card {
+        border: 4px solid #1e3a8a;
+        box-shadow: 8px 8px 0px rgba(30, 58, 138, 0.1);
+        border-radius: 30px;
+      }
+      .cartoon-button {
+        transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: 3px solid #1e3a8a;
+        box-shadow: 0 6px 0 #1e3a8a;
+      }
+      .cartoon-button:active {
+        transform: translateY(4px);
+        box-shadow: 0 2px 0 #1e3a8a;
+      }
+      .cartoon-button:hover {
+        filter: brightness(1.05);
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-15px) rotate(1deg); }
+      }
+      .animate-float {
+        animation: float 4s ease-in-out infinite;
+      }
+      @keyframes cloud {
+        from { transform: translateX(-100%); }
+        to { transform: translateX(100vw); }
+      }
+      .cloud {
+        position: absolute;
+        opacity: 0.4;
+        animation: cloud 80s linear infinite;
+        z-index: 0;
+        pointer-events: none;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #93c5fd;
+        border-radius: 10px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div class="cloud text-7xl top-10" style="animation-duration: 50s;">☁️</div>
+    <div class="cloud text-8xl top-40" style="animation-duration: 75s; animation-delay: -10s;">☁️</div>
+    <div class="cloud text-6xl top-80" style="animation-duration: 65s; animation-delay: -25s;">☁️</div>
+    
+    <div id="root" class="relative z-10 h-full w-full"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
